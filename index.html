@@ -691,6 +691,10 @@ document.getElementById("sendBtn").addEventListener("click", ()=>{
   if (notes) {
     msg += `\n\nObservaciones: ${notes}`;
   }
+  const location = document.getElementById("orderLocation").value.trim();
+  if (location) {
+    msg += `\n📍 Ubicación: ${location}`;
+  }
   const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(msg)}`;
   window.open(url, "_blank");
 });
